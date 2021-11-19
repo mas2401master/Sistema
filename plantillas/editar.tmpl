@@ -1,0 +1,34 @@
+{{define "editar"}}
+    {{template "cabecera"}}
+         <div class="card">
+          <div class="card-header">
+              Formulario de Empleados
+          </div>
+          <div class="card-body">
+            <form method="post" action="/actualizar">
+                <div class="form-group">
+                  <input type="hidden" class="form-control" name="id" id="id" placeholder="" value="{{.Id}}">
+                </div>
+                <div class="form-group">
+                    <label for="">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" class="form-control" aria-describedby="helpId" value="{{.Nombre}}">
+                    <small id="helpId" class="text-muted">Escribe tu nombre</small>
+                </div>
+
+                <div class="form-group">
+                  <label for="">Correo</label>
+                  <input type="email" class="form-control" name="correo" id="correo" aria-describedby="emailHelpId" placeholder="" value="{{.Correo}}">
+                  <small id="emailHelpId" class="form-text text-muted">Escribe tu correo</small>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Editar</button>
+                <a name="" id="" class="btn btn-primary" href="/" role="button">Cancelar</a>
+            </form>  
+             
+          </div>
+          <div class="card-footer text-muted">
+              Actualizar empleados en mysql
+          </div>
+      </div>
+    {{template "pie"}}
+{{end}}
